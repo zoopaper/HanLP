@@ -14,19 +14,17 @@ import java.io.*;
 
 /**
  * 从jar包资源读取文件的适配器
+ *
  * @author hankcs
  */
-public class ResourceIOAdapter implements IIOAdapter
-{
+public class ResourceIOAdapter implements IIOAdapter {
     @Override
-    public InputStream open(String path) throws IOException
-    {
+    public InputStream open(String path) throws IOException {
         return IOUtil.isResource(path) ? IOUtil.getResourceAsStream("/" + path) : new FileInputStream(path);
     }
 
     @Override
-    public OutputStream create(String path) throws IOException
-    {
+    public OutputStream create(String path) throws IOException {
         if (IOUtil.isResource(path)) throw new IllegalArgumentException("不支持写入jar包资源路径" + path);
         return new FileOutputStream(path);
     }

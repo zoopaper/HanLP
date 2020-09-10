@@ -3,10 +3,8 @@ package com.hankcs.hanlp.seg.Other;
 import com.hankcs.hanlp.HanLP;
 import junit.framework.TestCase;
 
-public class AhoCorasickDoubleArrayTrieSegmentTest extends TestCase
-{
-    public void testLoadMyDictionary() throws Exception
-    {
+public class AhoCorasickDoubleArrayTrieSegmentTest extends TestCase {
+    public void testLoadMyDictionary() throws Exception {
         AhoCorasickDoubleArrayTrieSegment segment
             = new AhoCorasickDoubleArrayTrieSegment("data/dictionary/CoreNatureDictionary.mini.txt");
         HanLP.Config.ShowTermNature = false;

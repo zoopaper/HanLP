@@ -10,9 +10,9 @@
  */
 package com.hankcs.hanlp.model.perceptron.instance;
 
+import com.hankcs.hanlp.corpus.document.sentence.Sentence;
 import com.hankcs.hanlp.model.perceptron.feature.FeatureMap;
 import com.hankcs.hanlp.model.perceptron.tagset.NERTagSet;
-import com.hankcs.hanlp.corpus.document.sentence.Sentence;
 import com.hankcs.hanlp.model.perceptron.utility.Utility;
 
 import java.util.ArrayList;
@@ -21,34 +21,27 @@ import java.util.List;
 /**
  * @author hankcs
  */
-public class NERInstance extends Instance
-{
-    public NERInstance(String[] wordArray, String[] posArray, String[] nerArray, NERTagSet tagSet, FeatureMap featureMap)
-    {
+public class NERInstance extends Instance {
+    public NERInstance(String[] wordArray, String[] posArray, String[] nerArray, NERTagSet tagSet, FeatureMap featureMap) {
         this(wordArray, posArray, featureMap);
 
         tagArray = new int[wordArray.length];
-        for (int i = 0; i < wordArray.length; i++)
-        {
+        for (int i = 0; i < wordArray.length; i++) {
             tagArray[i] = tagSet.add(nerArray[i]);
         }
     }
 
-    public NERInstance(String[][] tuples, NERTagSet tagSet, FeatureMap featureMap)
-    {
+    public NERInstance(String[][] tuples, NERTagSet tagSet, FeatureMap featureMap) {
         this(tuples[0], tuples[1], tuples[2], tagSet, featureMap);
     }
 
-    public NERInstance(String[] wordArray, String[] posArray, FeatureMap featureMap)
-    {
+    public NERInstance(String[] wordArray, String[] posArray, FeatureMap featureMap) {
         initFeatureMatrix(wordArray, posArray, featureMap);
     }
 
-    private void initFeatureMatrix(String[] wordArray, String[] posArray, FeatureMap featureMap)
-    {
+    private void initFeatureMatrix(String[] wordArray, String[] posArray, FeatureMap featureMap) {
         featureMatrix = new int[wordArray.length][];
-        for (int i = 0; i < featureMatrix.length; i++)
-        {
+        for (int i = 0; i < featureMatrix.length; i++) {
             featureMatrix[i] = extractFeature(wordArray, posArray, featureMap, i);
         }
     }
@@ -62,8 +55,7 @@ public class NERInstance extends Instance
      * @param position   当前提取的词语所在的位置
      * @return 特征向量
      */
-    protected int[] extractFeature(String[] wordArray, String[] posArray, FeatureMap featureMap, int position)
-    {
+    protected int[] extractFeature(String[] wordArray, String[] posArray, FeatureMap featureMap, int position) {
         List<Integer> featVec = new ArrayList<Integer>();
 
         String pre2Word = position >= 2 ? wordArray[position - 2] : "_B_";
@@ -102,18 +94,15 @@ public class NERInstance extends Instance
         return toFeatureArray(featVec);
     }
 
-    public NERInstance(String segmentedTaggedNERSentence, FeatureMap featureMap)
-    {
+    public NERInstance(String segmentedTaggedNERSentence, FeatureMap featureMap) {
         this(Sentence.create(segmentedTaggedNERSentence), featureMap);
     }
 
-    public NERInstance(Sentence sentence, FeatureMap featureMap)
-    {
+    public NERInstance(Sentence sentence, FeatureMap featureMap) {
         this(convertSentenceToArray(sentence, featureMap), (NERTagSet) featureMap.tagSet, featureMap);
     }
 
-    private static String[][] convertSentenceToArray(Sentence sentence, FeatureMap featureMap)
-    {
+    private static String[][] convertSentenceToArray(Sentence sentence, FeatureMap featureMap) {
         NERTagSet tagSet = (NERTagSet) featureMap.tagSet;
         List<String[]> collector = Utility.convertSentenceToNER(sentence, tagSet);
         String[][] tuples = new String[3][collector.size()];

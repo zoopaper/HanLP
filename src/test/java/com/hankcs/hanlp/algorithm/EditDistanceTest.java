@@ -4,6 +4,7 @@ import com.hankcs.hanlp.corpus.synonym.Synonym;
 import com.hankcs.hanlp.dictionary.common.CommonSynonymDictionary.SynonymItem;
 import org.junit.Assert;
 import org.junit.Test;
+
 import java.util.ArrayList;
 
 public class EditDistanceTest {
@@ -23,7 +24,7 @@ public class EditDistanceTest {
     public void testComputeList() {
         ArrayList<SynonymItem> synonymItems1 = new ArrayList<SynonymItem>();
         synonymItems1.add(new SynonymItem(new Synonym("", 32L), null, '='));
-        
+
         ArrayList<SynonymItem> synonymItems2 = new ArrayList<SynonymItem>();
         synonymItems2.add(new SynonymItem(new Synonym("", 64L), null, '='));
 

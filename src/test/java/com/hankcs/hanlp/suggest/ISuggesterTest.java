@@ -2,10 +2,8 @@ package com.hankcs.hanlp.suggest;
 
 import junit.framework.TestCase;
 
-public class ISuggesterTest extends TestCase
-{
-    public void testRemoveAllSentences() throws Exception
-    {
+public class ISuggesterTest extends TestCase {
+    public void testRemoveAllSentences() throws Exception {
         ISuggester suggester = new Suggester();
         String[] titleArray =
             (
@@ -15,8 +13,7 @@ public class ISuggesterTest extends TestCase
                     "日本保密法将正式生效 日媒指其损害国民知情权\n" +
                     "英报告说空气污染带来“公共健康危机”"
             ).split("\\n");
-        for (String title : titleArray)
-        {
+        for (String title : titleArray) {
             suggester.addSentence(title);
         }
 

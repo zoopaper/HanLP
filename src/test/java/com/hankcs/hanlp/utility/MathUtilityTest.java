@@ -3,9 +3,10 @@ package com.hankcs.hanlp.utility;
 import com.hankcs.hanlp.corpus.tag.Nature;
 import com.hankcs.hanlp.dictionary.CoreDictionary;
 import com.hankcs.hanlp.seg.common.Vertex;
-import java.util.HashMap;
 import org.junit.Assert;
 import org.junit.Test;
+
+import java.util.HashMap;
 
 public class MathUtilityTest {
     static final double DELTA = 0.0;
