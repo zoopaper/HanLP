@@ -115,11 +115,8 @@ public class BM25 {
             if (!f[index].containsKey(word)) continue;
             int d = docs.get(index).size();
             Integer tf = f[index].get(word);
-            score += (idf.get(word) * tf * (k1 + 1)
-                / (tf + k1 * (1 - b + b * d
-                / avgdl)));
+            score += (idf.get(word) * tf * (k1 + 1) / (tf + k1 * (1 - b + b * d / avgdl)));
         }
-
         return score;
     }
 
