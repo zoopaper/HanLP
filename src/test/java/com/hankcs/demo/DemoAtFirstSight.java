@@ -12,6 +12,12 @@
 package com.hankcs.demo;
 
 import com.hankcs.hanlp.HanLP;
+import com.hankcs.hanlp.dictionary.stopword.CoreStopWordDictionary;
+import com.hankcs.hanlp.seg.common.Term;
+import com.hankcs.hanlp.tokenizer.StandardTokenizer;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 第一个Demo，惊鸿一瞥
@@ -21,7 +27,17 @@ import com.hankcs.hanlp.HanLP;
 public class DemoAtFirstSight {
     public static void main(String[] args) {
         System.out.println("首次编译运行时，HanLP会自动构建词典缓存，请稍候……");
-        HanLP.Config.enableDebug();         // 为了避免你等得无聊，开启调试模式说点什么:-)
-        System.out.println(HanLP.segment("你好，欢迎使用HanLP汉语处理包！接下来请从其他Demo中体验HanLP丰富的功能~"));
+//        HanLP.Config.enableDebug();         // 为了避免你等得无聊，开启调试模式说点什么:-)
+
+
+        List<String> terms = new ArrayList<String>();
+        List<Term> termList = StandardTokenizer.segment("点点app");
+        for (Term term : termList) {
+            if (CoreStopWordDictionary.shouldInclude(term)) {
+                terms.add(term.word);
+            }
+        }
+        System.out.println(terms);
+//        System.out.println(HanLP.segment("@所有人 帮我助力，我马上拿3○元，谢...\t"));
     }
 }

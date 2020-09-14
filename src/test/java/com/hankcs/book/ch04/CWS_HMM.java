@@ -22,12 +22,10 @@ import java.io.IOException;
 
 /**
  * 《自然语言处理入门》4.6 隐马尔可夫模型应用于中文分词
- * 配套书籍：http://nlp.hankcs.com/book.php
- * 讨论答疑：https://bbs.hankcs.com/
+ * <p>
  * 演示一阶和二阶隐马尔可夫模型用于序列标注问题之中文分词
  *
  * @author hankcs
- * @see <a href="http://nlp.hankcs.com/book.php">《自然语言处理入门》</a>
  * @see <a href="https://bbs.hankcs.com/">讨论答疑</a>
  */
 public class CWS_HMM {

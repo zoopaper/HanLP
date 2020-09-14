@@ -19,12 +19,10 @@ import java.io.IOException;
 
 /**
  * 《自然语言处理入门》12.4 基于转移的依存句法分析
- * 配套书籍：http://nlp.hankcs.com/book.php
- * 讨论答疑：https://bbs.hankcs.com/
+ * <p>
  * 请在{@link ArcEager#commitAction}中下一个断点，观察ArcEager转移系统
  *
  * @author hankcs
- * @see <a href="http://nlp.hankcs.com/book.php">《自然语言处理入门》</a>
  * @see <a href="https://bbs.hankcs.com/">讨论答疑</a>
  */
 public class DebugKBeamArcEagerDependencyParser {

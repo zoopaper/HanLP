@@ -22,12 +22,10 @@ import static com.hankcs.demo.DemoTextClassification.CORPUS_FOLDER;
 
 /**
  * 《自然语言处理入门》11.2 文本分类语料库
- * 配套书籍：http://nlp.hankcs.com/book.php
- * 讨论答疑：https://bbs.hankcs.com/
+ * <p>
  * 演示加载文本分类语料库
  *
  * @author hankcs
- * @see <a href="http://nlp.hankcs.com/book.php">《自然语言处理入门》</a>
  * @see <a href="https://bbs.hankcs.com/">讨论答疑</a>
  */
 public class DemoLoadTextClassificationCorpus {

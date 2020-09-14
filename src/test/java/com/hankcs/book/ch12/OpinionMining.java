@@ -20,11 +20,8 @@ import java.util.List;
 
 /**
  * 《自然语言处理入门》12.6 案例:基于依存句法树的意见抽取
- * 配套书籍：http://nlp.hankcs.com/book.php
- * 讨论答疑：https://bbs.hankcs.com/
  *
  * @author hankcs
- * @see <a href="http://nlp.hankcs.com/book.php">《自然语言处理入门》</a>
  * @see <a href="https://bbs.hankcs.com/">讨论答疑</a>
  */
 public class OpinionMining {

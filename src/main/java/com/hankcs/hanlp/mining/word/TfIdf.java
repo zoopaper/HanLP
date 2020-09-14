@@ -51,8 +51,7 @@ public class TfIdf {
     public static <TERM> Map<TERM, Double> tf(Collection<TERM> document, TfType type) {
         Map<TERM, Double> tf = new HashMap<TERM, Double>();
         for (TERM term : document) {
-            Double f = tf.get(term);
-            if (f == null) f = 0.0;
+            Double f = tf.getOrDefault(term, 0.0);
             tf.put(term, f + 1);
         }
         if (type != TfType.NATURAL) {

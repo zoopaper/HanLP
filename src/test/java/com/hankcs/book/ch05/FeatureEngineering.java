@@ -26,11 +26,8 @@ import java.util.List;
 
 /**
  * 《自然语言处理入门》5.6.7 中文分词特征工程
- * 配套书籍：http://nlp.hankcs.com/book.php
- * 讨论答疑：https://bbs.hankcs.com/
  *
  * @author hankcs
- * @see <a href="http://nlp.hankcs.com/book.php">《自然语言处理入门》</a>
  * @see <a href="https://bbs.hankcs.com/">讨论答疑</a>
  */
 public class FeatureEngineering {

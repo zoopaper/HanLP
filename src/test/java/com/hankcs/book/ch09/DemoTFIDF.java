@@ -12,13 +12,12 @@ package com.hankcs.book.ch09;
 
 import com.hankcs.hanlp.mining.word.TfIdfCounter;
 
+import java.util.Map;
+
 /**
  * 《自然语言处理入门》9.2 关键词提取
- * 配套书籍：http://nlp.hankcs.com/book.php
- * 讨论答疑：https://bbs.hankcs.com/
  *
  * @author hankcs
- * @see <a href="http://nlp.hankcs.com/book.php">《自然语言处理入门》</a>
  * @see <a href="https://bbs.hankcs.com/">讨论答疑</a>
  */
 public class DemoTFIDF {
@@ -31,9 +30,9 @@ public class DemoTFIDF {
 //        // 加载idf文件
 //        counter.loadIdfFile("data/idf.txt");
 
-        counter.compute(); // 输入完毕
-        for (Object id : counter.documents()) // 根据每篇文档的TF-IDF提取关键词
-        {
+        Map<Object, Map<String, Double>> oo=  counter.compute(); // 输入完毕
+        // 根据每篇文档的TF-IDF提取关键词
+        for (Object id : counter.documents()) {
             System.out.println(id + " : " + counter.getKeywordsOf(id, 3));
         }
     }

@@ -17,11 +17,8 @@ import com.hankcs.hanlp.dependency.nnparser.NeuralNetworkDependencyParser;
 
 /**
  * 《自然语言处理入门》13.4 基于神经网络的高性能依存句法分析器
- * 配套书籍：http://nlp.hankcs.com/book.php
- * 讨论答疑：https://bbs.hankcs.com/
  *
  * @author hankcs
- * @see <a href="http://nlp.hankcs.com/book.php">《自然语言处理入门》</a>
  * @see <a href="https://bbs.hankcs.com/">讨论答疑</a>
  */
 public class DemoNeuralParser {

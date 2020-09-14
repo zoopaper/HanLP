@@ -21,11 +21,8 @@ import java.io.IOException;
 
 /**
  * 《自然语言处理入门》5.6 基于结构化感知机的中文分词
- * 配套书籍：http://nlp.hankcs.com/book.php
- * 讨论答疑：https://bbs.hankcs.com/
  *
  * @author hankcs
- * @see <a href="http://nlp.hankcs.com/book.php">《自然语言处理入门》</a>
  * @see <a href="https://bbs.hankcs.com/">讨论答疑</a>
  */
 public class EvaluatePerceptronCWS {

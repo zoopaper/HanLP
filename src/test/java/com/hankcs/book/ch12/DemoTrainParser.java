@@ -18,11 +18,8 @@ import java.util.concurrent.ExecutionException;
 
 /**
  * 《自然语言处理入门》12.5 依存句法分析 API
- * 配套书籍：http://nlp.hankcs.com/book.php
- * 讨论答疑：https://bbs.hankcs.com/
  *
  * @author hankcs
- * @see <a href="http://nlp.hankcs.com/book.php">《自然语言处理入门》</a>
  * @see <a href="https://bbs.hankcs.com/">讨论答疑</a>
  */
 public class DemoTrainParser {
